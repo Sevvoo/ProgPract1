@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-// Функція для знаходження найбільшого спільного дільника (НСД) двох чисел
+// Function to find the GCD of two numbers
 int gcd(int a, int b) {
     if (b == 0)
         return a;
     return gcd(b, a % b);
 }
 
-// Функція для знаходження найменшого спільного кратного (НСК) двох чисел
+// Function to find the LCM of two numbers
 int lcm(int a, int b) {
     return (a * b) / gcd(a, b);
 }
 
-// Функція для знаходження НСК різних натуральних чисел
+// Function to find the LCM of multiple natural numbers
 int find_lcm(int arr[], int n) {
-    int result = arr[0];  // Початкове значення НСК
+    int result = arr[0];  // Initial LCM value
 
-    // Застосовуємо НСК до всіх елементів масиву
+    // Apply LCM to all elements in the array
     for (int i = 1; i < n; i++) {
         result = lcm(result, arr[i]);
     }
@@ -25,17 +25,17 @@ int find_lcm(int arr[], int n) {
 }
 
 int main() {
-    int n; // Кількість елементів
+    int p; // Number of elements
     printf("Enter the number of elements: ");
-    scanf("%d", &n);
+    scanf("%d", &p);
 
-    int arr[20]; // Масив для зберігання чисел
-    printf("Enter %d numbers separated by space: ", n);
-    for (int i = 0; i < n; i++) {
+    int arr[30]; // Array to store the numbers
+    printf("Enter %d numbers separated by space: ", p);
+    for (int i = 0; i < p; i++) {
         scanf("%d", &arr[i]);
     }
 
-    int lcm_result = find_lcm(arr, n);
+    int lcm_result = find_lcm(arr, p);
     printf("Least Common Multiple: %d\n", lcm_result);
 
     return 0;
