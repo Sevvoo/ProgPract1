@@ -1,0 +1,4 @@
+First name: s
+Last name: w
+Minimum element: 1
+Position of the minimum element: 0
